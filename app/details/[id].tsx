@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { StyleSheet, View, ActivityIndicator, FlatList } from 'react-native';
+import { StyleSheet, View, ActivityIndicator, FlatList, SafeAreaView } from 'react-native';
 import axios from 'axios';
 import { globalStyles } from '../../styles';
 import { theme } from '../../theme';
@@ -115,6 +115,7 @@ const Movie: React.FC = () => {
   );
 
   return (
+    <SafeAreaView style={{flex:1}}>
     <ContentLayout
       isLoading={loading}
       // imageUrl={`https://image.tmdb.org/t/p/w500${backdrop_path}`}
@@ -172,6 +173,7 @@ const Movie: React.FC = () => {
         )}
       </View>
     </ContentLayout>
+    </SafeAreaView>
   );
 };
 
